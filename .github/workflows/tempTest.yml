@@ -1,0 +1,16 @@
+name: tempTest
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  create-github-release:
+    name: Produce
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Draft Release
+        run: echo '${{ secrets.GITHUB_TOKEN }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
