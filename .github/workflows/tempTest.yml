@@ -3,7 +3,7 @@ name: tempTest
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   create-github-release:
