@@ -10,7 +10,10 @@ jobs:
     name: Produce
     runs-on: ubuntu-latest
     steps:
-      - name: Create Draft Release
-        run: echo '${{ secrets.GITHUB_TOKEN }}'
+      - run: touch $GITHUB_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: ls
+      - run: echo $GITHUB_TOKEN
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
